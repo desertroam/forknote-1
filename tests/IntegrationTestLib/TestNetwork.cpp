@@ -24,9 +24,9 @@
 #include "RPCTestNode.h"
 
 #ifdef _WIN32
-const std::string bytecoinDaemon = "bytecoind.exe";
+const std::string dunedaemon = "duned.exe";
 #else
-const std::string bytecoinDaemon = "bytecoind";
+const std::string dunedaemon = "duned";
 #endif
 
 namespace {
@@ -135,9 +135,9 @@ TestNodeConfiguration TestNetworkBuilder::buildNodeConfiguration(size_t index) {
     cfg.blockchainLocation = blockchainLocation;
   }
 
-  cfg.daemonPath = bytecoinDaemon; // default
+  cfg.daemonPath = dunedaemon; // default
   cfg.testnet = testnet;
-  cfg.logFile = "test_bytecoind" + std::to_string(index) + ".log";
+  cfg.logFile = "test_duned" + std::to_string(index) + ".log";
 
   uint16_t rpcPort = static_cast<uint16_t>(rpcBasePort + index);
   uint16_t p2pPort = static_cast<uint16_t>(p2pBasePort + index);
